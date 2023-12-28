@@ -2,17 +2,16 @@ import React, {useEffect, useState} from 'react';
 import PantryItemForm from './PantryAddPage/PantryItemForm'
 import '../CSS/App.css';
 import {Category, Location, PantryItem} from "../Models/PantryAddPageModels";
-import Table, {ColumnDefinitionType} from "../Components/Table";
 import PantryAddTable from "./PantryAddPage/PantryAddTable";
-import {Console} from "inspector";
 
 function PantryAddPage() {
 
     const [pantryArr, setPantryArr] = useState<PantryItem[]>([]);
-    const [pantryCategories, setPantryCategories] = useState<Category[]>([{category:"ERROR", id:0}]);
-    const [pantryLocations, setPantryLocations] = useState<Location[]>([{location:"ERROR", id:0}]);
+    const [pantryCategories, setPantryCategories] = useState<Category[]>([{category:"ERROR", categoryId:0}]);
+    const [pantryLocations, setPantryLocations] = useState<Location[]>([{location:"ERROR", locationId:0}]);
 
     useEffect(() => {
+        //console.log("Add Api Calls")
         fetch("http://localhost:8080/api/v1/category/get?userId=1001")
             .then(response => response.json())
                 .then(data => {

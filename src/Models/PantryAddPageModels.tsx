@@ -1,4 +1,5 @@
 export interface PantryItem {
+    pantryItemId?: number
     name: string
     quantityLevel: string
     favorite: boolean
@@ -10,12 +11,12 @@ export interface PantryItem {
 
 export interface Category {
     category: string
-    id: number
+    categoryId: number
 }
 
 export interface Location {
     location: string
-    id: number
+    locationId: number
 }
 
 export interface Measurement {

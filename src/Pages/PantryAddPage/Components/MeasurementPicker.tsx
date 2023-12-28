@@ -81,11 +81,11 @@ const MeasurementPicker: React.FC<ExpirationDatePickerProps> = ({
 
     return (
         <>
-            <label>Does Item Have A Measurement: <input type="checkbox" onChange={(): void => toggleMeasurement()}/></label>
+            <label>Does Item Have A Measurement: <input type="checkbox" checked={hasMeasurement} onChange={(): void => toggleMeasurement()}/></label>
 
             {hasMeasurement && (
                 <div>
-                    <label>value: <input type={"text"} name={"value"} onChange={(event): void => updateMeasurementValue(event)} /></label>
+                    <label>value: <input type={"text"} name={"value"} value={formPantryItem.measurement?.value} onChange={(event): void => updateMeasurementValue(event)} /></label>
 
                     <button
                         className={showMeasurementDropDown ? "active" : undefined}

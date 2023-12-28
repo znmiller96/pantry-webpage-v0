@@ -33,7 +33,7 @@ const ExpirationDatePicker: React.FC<ExpirationDatePickerProps> = ({
 
     return (
         <>
-            <label>Does Item Have Expiration Date: <input type="checkbox" onChange={(): void => toggleDatePicker()}/></label>
+            <label>Does Item Have Expiration Date: <input type="checkbox" checked={hasExpirationDate} onChange={(): void => toggleDatePicker()}/></label>
 
             {hasExpirationDate && (
                 <div>

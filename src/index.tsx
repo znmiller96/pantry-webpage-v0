@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './CSS/index.css';
-import PantryAddPage from './Pages/PantryAddPage';
 import reportWebVitals from './reportWebVitals';
+import PageTabs from "./Pages/PageTabs";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <PantryAddPage />
+    <PageTabs />
   </React.StrictMode>
 );
 

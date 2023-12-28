@@ -31,10 +31,10 @@ const PantryItemForm: React.FC<PantryItemFormProps> = ({
             name : "Item Name",
             quantityLevel : "HIGH",
             favorite : false,
-            category: {"id": 0, "category": ""},
-            location: {"id": 0, "location": ""},
+            category: {"categoryId": 0, "category": ""},
+            location: {"locationId": 0, "location": ""},
             expirationDate: undefined,
-            measurement: {value: "test", unit: "test"}//undefined
+            measurement: undefined
         }
     )
 
