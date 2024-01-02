@@ -9,23 +9,23 @@ import LocationDropDown from "./PantryAddPage/Components/LocationDropDown";
 import ExpirationDatePicker from "./PantryAddPage/Components/ExpirationDatePicker";
 import MeasurementPicker from "./PantryAddPage/Components/MeasurementPicker";
 
-type PantryItemFormProps = {
+type EditModalProps = {
     categoryOptionArr: Category[],
     locationOptionArr: Location[],
     today: Date,
+    //TODO replace with item not list
     pantryArr: PantryItem[],
     setPantryArr: Function,
     index: number
 }
 
-const EditPage: React.FC<PantryItemFormProps> = ({
+const EditModal: React.FC<EditModalProps> = ({
                                                         categoryOptionArr,
                                                         locationOptionArr,
                                                         today,
                                                         pantryArr,
-                                                        setPantryArr,
                                                         index
-                                                    }: PantryItemFormProps): ReactElement => {
+                                                  }: EditModalProps): ReactElement => {
 
     const [hasExpirationDate, setHasExpirationDate] = useState<boolean>(!!pantryArr[index].expirationDate);
     const [hasMeasurement, setHasMeasurement] = useState<boolean>(!!pantryArr[index].measurement);
@@ -66,7 +66,6 @@ const EditPage: React.FC<PantryItemFormProps> = ({
     }
 
     const updatePantryItem = () => {
-        console.log(formPantryItem)
         fetch("http://localhost:8080/api/v1/pantry/update/pantryItem?userId=1001",
             {
                 method: "POST",
@@ -143,7 +142,7 @@ const EditPage: React.FC<PantryItemFormProps> = ({
                         setHasMeasurement={setHasMeasurement} />
                 </div>
 
-                <button onClick={toggle}>Close Modal </button>
+                <button onClick={toggle}>Cancel</button>
                 <button onClick={(): void => updatePantryItem()} >
                     Update Item
                 </button>
@@ -153,4 +152,4 @@ const EditPage: React.FC<PantryItemFormProps> = ({
 
 }
 
-export default EditPage
+export default EditModal

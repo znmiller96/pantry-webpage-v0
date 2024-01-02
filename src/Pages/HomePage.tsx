@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import '../CSS/App.css';
 import {Category, Location, PantryItem} from "../Models/PantryAddPageModels";
-import EditPage from "./EditPage";
+import EditModal from "./EditModal";
+import RemoveModal from "./RemoveModal";
 
 function HomePage() {
 
@@ -47,6 +48,7 @@ function HomePage() {
                     <th>Location</th>
                     <th>Expiration Date</th>
                     <th>Measurement</th>
+                    <th>Remove</th>
                     <th>Edit</th>
                 </tr>
                 </thead>
@@ -62,9 +64,10 @@ function HomePage() {
                             <td>{pantryItem.expirationDate ? pantryItem.expirationDate.toString() : ""}</td>
                             <td>{pantryItem.measurement ? pantryItem.measurement.value + " " + pantryItem.measurement.unit : ""}</td>
                             <td>
-                                {/*<button >*/}
-                                    <EditPage categoryOptionArr={pantryCategories} locationOptionArr={pantryLocations} today={today} pantryArr={pantryArr} setPantryArr={setPantryArr} index={index} />
-                                {/*</button>*/}
+                                <RemoveModal pantryItem={pantryItem}/>
+                            </td>
+                            <td>
+                                <EditModal categoryOptionArr={pantryCategories} locationOptionArr={pantryLocations} today={today} pantryArr={pantryArr} setPantryArr={setPantryArr} index={index} />
                             </td>
                         </tr>
                     )
