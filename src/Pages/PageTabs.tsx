@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PantryAddPage from "./PantryAddPage";
 import HomePage from "./HomePage";
-import '../CSS/App.css';
+//import '../CSS/App.css';
 
 function PageTabs() {
 
@@ -12,15 +12,15 @@ function PageTabs() {
     }
 
     return (
-        <>
-            <div className={"Tabs"}>
-                <button onClick={(): void => changeTab("Home")} >
+        <div className={"min-h-screen"}>
+            <div className={"Tabs bg-gray-800 text-yellow-200"}>
+                <button onClick={(): void => changeTab("Home")} className={"border-r-2 border-amber-200 pl-5 p-2"}>
                     Home
                 </button>
-                <button onClick={(): void => changeTab("Add")} >
+                <button onClick={(): void => changeTab("Add")} className={"pl-2"}>
                     Add
                 </button>
-                <button onClick={(): void => changeTab("Setting")} >
+                <button onClick={(): void => changeTab("Setting")} className={"pl-2"}>
                     Setting
                 </button>
             </div>
@@ -39,7 +39,7 @@ function PageTabs() {
                     <p>test</p>
                 }
             </div>
-        </>
+        </div>
     )
 }
 

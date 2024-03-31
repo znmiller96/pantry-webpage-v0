@@ -32,19 +32,17 @@ function PantryAddPage() {
 
   return (
       <>
-          <div className="App">
-              <header className="App-header">
-                  <PantryItemForm
-                      categoryOptionArr={pantryCategories}
-                      locationOptionArr={pantryLocations}
-                      today={today}
-                      pantryArr={pantryArr}
-                      setPantryArr={setPantryArr} />
+          <div>
+              <PantryItemForm
+                  categoryOptionArr={pantryCategories}
+                  locationOptionArr={pantryLocations}
+                  today={today}
+                  pantryArr={pantryArr}
+                  setPantryArr={setPantryArr} />
 
-                  <PantryAddTable
-                      pantryArr={pantryArr}
-                      setPantryArr={setPantryArr}/>
-              </header>
+              <PantryAddTable
+                  pantryArr={pantryArr}
+                  setPantryArr={setPantryArr}/>
           </div>
       </>
   );

@@ -31,6 +31,7 @@ const DropDown: React.FC<DropDownProps> = ({
     return (
         <>
             <div className={showDropDown ? 'dropdown' : 'dropdown active'}>
+                <div className={"absolute text-black z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none divide-y"}>
                 {options.map(
                     (option: string, index: number): ReactElement => {
                         return (
@@ -39,12 +40,14 @@ const DropDown: React.FC<DropDownProps> = ({
                                 onClick={(): void => {
                                     onClickHandler(option, index);
                                 }}
+                                className={'hover:bg-gray-200 hover:text-gray-900 text-gray-700 py-1'}
                             >
                                 {option}
                             </p>
                         );
                     }
                 )}
+                </div>
             </div>
         </>
     );
