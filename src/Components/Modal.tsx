@@ -11,7 +11,7 @@ export default function Modal(props: ModalType) {
         <>
             {props.isOpen && (
                 <div className="modal-overlay" onClick={props.toggle}>
-                    <div onClick={(e) => e.stopPropagation()} className="modal-box">
+                    <div onClick={(e) => e.stopPropagation()} >
                         {props.children}
                     </div>
                 </div>

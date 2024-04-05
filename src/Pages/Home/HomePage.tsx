@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import '../CSS/App.css';
-import {Category, Location, PantryItem} from "../Models/PantryAddPageModels";
-import EditModal from "./EditModal";
-import RemoveModal from "./RemoveModal";
+import '../../CSS/App.css';
+import {Category, Location, PantryItem} from "../../Models/PantryAddPageModels";
+import EditModal from "./Components/EditModal";
+import RemoveModal from "./Components/RemoveModal";
 
 function HomePage() {
 
@@ -36,6 +36,26 @@ function HomePage() {
 
     const today = new Date();
 
+    function colorLogic(date: Date | null | undefined, quantity: string) {
+        let bgColor = "odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 ";
+        if (date === null || date === undefined) {
+            return bgColor
+        }
+
+        //TODO look up how to compare dates
+        //Medium quantity and 5 days from expiring
+        if (date > today || quantity === "MEDIUM") {
+            return "bg-orange-300 "
+        }
+
+        //Medium quantity and 5 days from expiring
+        if (date > today || quantity === "LOW") {
+            return "bg-red-300 "
+        }
+
+        return bgColor
+    }
+
     return (
         <div className={"relative overflow-x-auto shadow-md sm:rounded-lg"}>
             <table className={"w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"}>
@@ -55,7 +75,7 @@ function HomePage() {
                 <tbody>
                 {pantryArr.map((pantryItem, index) => {
                     return(
-                        <tr className={"odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"}>
+                        <tr className={colorLogic(pantryItem.expirationDate, pantryItem.quantityLevel) + " border-b dark:border-gray-700"}>
                             <td className={"px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"}>{pantryItem.name ? pantryItem.name : ""}</td>
                             <td className={"px-6 py-4"}>{pantryItem.quantityLevel.toString()}</td>
                             <td className={"px-6 py-4"}>{pantryItem.favorite ? "true" : "false"}</td>

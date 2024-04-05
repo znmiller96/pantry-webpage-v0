@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import PantryAddPage from "./PantryAddPage";
-import HomePage from "./HomePage";
+import HomePage from "./Home/HomePage";
 //import '../CSS/App.css';
 
 function PageTabs() {
