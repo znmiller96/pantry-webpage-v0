@@ -10,10 +10,6 @@ export default function UserLoginPage() {
         setUserLoggedIn(getLocalStorage("userId"))
     }, [])
 
-    function getUser() {
-        setUserLoggedIn(getLocalStorage("userId"))
-    }
-
     function login() {
         const userId = getLocalStorage("userId")
         if (userId === "") {
