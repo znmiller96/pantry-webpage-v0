@@ -3,13 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './CSS/index.css';
 import reportWebVitals from './reportWebVitals';
 import PageTabs from "./Pages/PageTabs";
+import {BrowserRouter} from "react-router-dom";
+import App from "./App";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <PageTabs />
+      <BrowserRouter>
+          <App />
+      </BrowserRouter>
+    {/*<PageTabs />*/}
   </React.StrictMode>
 );
 

@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import PantryItemForm from './PantryAddPage/PantryItemForm'
-import '../CSS/App.css';
-import {Category, Location, PantryItem} from "../Models/PantryAddPageModels";
-import PantryAddTable from "./PantryAddPage/PantryAddTable";
+import PantryItemForm from './PantryItemForm'
+import '../../CSS/App.css';
+import {Category, Location, PantryItem} from "../../Models/PantryAddPageModels";
+import PantryAddTable from "./PantryAddTable";
+import {useParams} from "react-router-dom";
 
 function PantryAddPage() {
+
+    let { id} = useParams<"id">();
 
     const [pantryArr, setPantryArr] = useState<PantryItem[]>([]);
     const [pantryCategories, setPantryCategories] = useState<Category[]>([{category:"ERROR", categoryId:0}]);
@@ -12,14 +15,14 @@ function PantryAddPage() {
 
     useEffect(() => {
         //console.log("Add Api Calls")
-        fetch("http://localhost:8080/api/v1/category/get?userId=1001")
+        fetch("http://localhost:8080/api/v1/category/get?userId=" + id)
             .then(response => response.json())
                 .then(data => {
                     setPantryCategories(data)
                 })
             .catch(() => console.log("Error loading Categories"));
 
-        fetch("http://localhost:8080/api/v1/location/get?userId=1001")
+        fetch("http://localhost:8080/api/v1/location/get?userId=" + id)
             .then(response => response.json())
                 .then(data => {
                     setPantryLocations(data)
@@ -30,6 +33,7 @@ function PantryAddPage() {
 
     const today = new Date();
 
+    console.log("id: " + id)
   return (
       <>
           <div>
