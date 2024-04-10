@@ -1,7 +1,7 @@
-import {PantryItem} from "../Models/PantryAddPageModels";
-import UseModal from "../Hooks/UseModal";
+import {PantryItem} from "../../Models/PantryAddPageModels";
+import UseModal from "../../Hooks/UseModal";
 import React, {ReactElement, useState} from "react";
-import Modal from "../Components/Modal";
+import Modal from "../../Components/Modal";
 
 type RemoveModalProps = {
     pantryItem: PantryItem

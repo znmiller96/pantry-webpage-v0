@@ -1,13 +1,13 @@
 import React, {ReactElement, useEffect, useState} from "react";
 import 'reactjs-popup/dist/index.css';
-import {Category, Location, PantryItem} from "../Models/PantryAddPageModels";
-import Modal from "../Components/Modal";
-import UseModal from "../Hooks/UseModal";
-import QuantityLevelDropDown from "./PantryAddPage/Components/QuantityLevelDropDown";
-import CategoryDropDown from "./PantryAddPage/Components/CategoryDropDown";
-import LocationDropDown from "./PantryAddPage/Components/LocationDropDown";
-import ExpirationDatePicker from "./PantryAddPage/Components/ExpirationDatePicker";
-import MeasurementPicker from "./PantryAddPage/Components/MeasurementPicker";
+import {Category, Location, PantryItem} from "../../Models/PantryAddPageModels";
+import Modal from "../../Components/Modal";
+import UseModal from "../../Hooks/UseModal";
+import QuantityLevelDropDown from "../PantryAddPage/Components/QuantityLevelDropDown";
+import CategoryDropDown from "../PantryAddPage/Components/CategoryDropDown";
+import LocationDropDown from "../PantryAddPage/Components/LocationDropDown";
+import ExpirationDatePicker from "../PantryAddPage/Components/ExpirationDatePicker";
+import MeasurementPicker from "../PantryAddPage/Components/MeasurementPicker";
 
 type EditModalProps = {
     categoryOptionArr: Category[],

@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
-import '../CSS/App.css';
-import {Category, Location, PantryItem} from "../Models/PantryAddPageModels";
+import '../../CSS/App.css';
+import {Category, Location, PantryItem} from "../../Models/PantryAddPageModels";
 import EditModal from "./EditModal";
 import RemoveModal from "./RemoveModal";
 
-function HomePage() {
+function UserHomePage() {
 
     const [pantryArr, setPantryArr] = useState<PantryItem[]>([]);
     const [pantryCategories, setPantryCategories] = useState<Category[]>([{category:"ERROR", categoryId:0}]);
@@ -78,4 +78,4 @@ function HomePage() {
     )
 }
 
-export default HomePage
+export default UserHomePage
