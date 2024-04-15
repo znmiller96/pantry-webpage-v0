@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import {useParams} from "react-router-dom";
+import {deleteLocalStorage} from "../../Hooks/UseLocalStorage";
 
 type UserSetting = {
     userId: string,
@@ -15,12 +17,9 @@ type ColorLogic = {
     daysBeforeExpirationThrowSoonWarning: number
     expireTomorrowColor: string
 }
+export default function AccountPage() {
 
-type AccountPageProps = {
-    userId: string
-}
-
-export default function AccountPage(props: AccountPageProps) {
+    let {id} = useParams<"id">();
 
     const [userSettings, setUserSettings] = useState<UserSetting>({
         userId: "1001",
@@ -36,9 +35,18 @@ export default function AccountPage(props: AccountPageProps) {
         }
     });
 
+    function logout() {
+        deleteLocalStorage("userId")
+        window.location.href = "http://localhost:3000/"
+    }
+
     return (
         <div>
+            Welcome to account page {id}
 
+            <div>
+                <button onClick={logout}>Log out</button>
+            </div>
         </div>
     )
 }

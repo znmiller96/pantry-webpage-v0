@@ -7,7 +7,7 @@ import {useParams} from "react-router-dom";
 
 function PantryAddPage() {
 
-    let { id} = useParams<"id">();
+    let {id} = useParams<"id">();
 
     const [pantryArr, setPantryArr] = useState<PantryItem[]>([]);
     const [pantryCategories, setPantryCategories] = useState<Category[]>([{category:"ERROR", categoryId:0}]);
@@ -32,8 +32,6 @@ function PantryAddPage() {
 
 
     const today = new Date();
-
-    console.log("id: " + id)
   return (
       <>
           <div>

@@ -1,5 +1,5 @@
 
-
+//Return the string so that where function is called then use JSON.parse to get object if more complex
 export function getLocalStorage(id: string) :string {
 
     const localStorageItem = localStorage.getItem(id);

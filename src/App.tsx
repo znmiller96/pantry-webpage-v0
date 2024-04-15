@@ -3,6 +3,8 @@ import UserHomePage from "./Pages/HomePage/UserHomePage";
 import PageTabs from "./Pages/PageTabs";
 import PantryAddPage from "./Pages/PantryAddPage/PantryAddPage";
 import UserLoginPage from "./Pages/LoginPage/UserLoginPage";
+import AccountPage from "./Pages/AccountPage/AccountPage";
+import DefaultHomePage from "./Pages/HomePage/DefaultHomePage";
 
 
 export default function App() {
@@ -14,6 +16,10 @@ export default function App() {
             children: [
                 {
                     index: true,
+                    element: <DefaultHomePage />
+                },
+                {
+                    path: "/:id",
                     element: <UserHomePage />
                 },
                 {
@@ -23,6 +29,10 @@ export default function App() {
                 {
                     path: "/login",
                     element: <UserLoginPage />
+                },
+                {
+                    path: "/account/:id",
+                    element: <AccountPage />
                 }
             ]
         }
