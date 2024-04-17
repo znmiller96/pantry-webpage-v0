@@ -61,8 +61,8 @@ const PantryAddTable: React.FC<PantryAddTableProps> = ({
                                 <td>{pantryItem.name ? pantryItem.name : ""}</td>
                                 <td>{pantryItem.quantityLevel.toString()}</td>
                                 <td>{pantryItem.favorite ? "true" : "false"}</td>
-                                <td>{pantryItem.category ? pantryItem.category.category : ""}</td>
-                                <td>{pantryItem.location ? pantryItem.location.location : ""}</td>
+                                <td>{pantryItem.category ? pantryItem.category : ""}</td>
+                                <td>{pantryItem.location ? pantryItem.location : ""}</td>
                                 <td>{pantryItem.expirationDate ? pantryItem.expirationDate.toDateString() : ""}</td>
                                 <td>{pantryItem.measurement ? pantryItem.measurement.value + " " + pantryItem.measurement.unit : ""}</td>
                                 <td>

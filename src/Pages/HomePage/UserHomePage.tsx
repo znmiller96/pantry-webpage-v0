@@ -37,7 +37,7 @@ function UserHomePage() {
     const today = new Date();
 
     return (
-        <div className={"relative overflow-x-auto shadow-md sm:rounded-lg"}>
+        <div className={"relative overflow-x-auto shadow-md min-h-screen"}>
             <table className={"w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"}>
                 <thead className={"text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"}>
                 <tr>
@@ -59,8 +59,8 @@ function UserHomePage() {
                             <td className={"px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"}>{pantryItem.name ? pantryItem.name : ""}</td>
                             <td className={"px-6 py-4"}>{pantryItem.quantityLevel.toString()}</td>
                             <td className={"px-6 py-4"}>{pantryItem.favorite ? "true" : "false"}</td>
-                            <td className={"px-6 py-4"}>{pantryItem.category ? pantryItem.category.category : ""}</td>
-                            <td className={"px-6 py-4"}>{pantryItem.location ? pantryItem.location.location : ""}</td>
+                            <td className={"px-6 py-4"}>{pantryItem.category ? pantryItem.category : ""}</td>
+                            <td className={"px-6 py-4"}>{pantryItem.location ? pantryItem.location : ""}</td>
                             <td className={"px-6 py-4"}>{pantryItem.expirationDate ? pantryItem.expirationDate.toString() : ""}</td>
                             <td className={"px-6 py-4"}>{pantryItem.measurement ? pantryItem.measurement.value + " " + pantryItem.measurement.unit : ""}</td>
                             <td className={"px-6 py-4"}>

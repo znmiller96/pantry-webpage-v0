@@ -3,8 +3,8 @@ export interface PantryItem {
     name: string
     quantityLevel: string
     favorite: boolean
-    category: Category
-    location: Location
+    category: string
+    location: string
     expirationDate?: Date | null
     measurement?: Measurement | null
 }
