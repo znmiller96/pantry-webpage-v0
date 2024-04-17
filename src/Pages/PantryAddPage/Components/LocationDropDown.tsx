@@ -44,7 +44,7 @@ const LocationDropDown: React.FC<LocationDropDownProps> = ({
     const locationSelection = (location: string, index: number): void => {
         setFormPantryItem({
             ...formPantryItem,
-            location: locations[index]
+            location: location
         });
     };
 
@@ -55,7 +55,7 @@ const LocationDropDown: React.FC<LocationDropDownProps> = ({
                 onClick={(): void => toggleDropDown()}
                 onBlur={(e: React.FocusEvent<HTMLButtonElement>): void => dismissHandler(e)}
             >
-                <div>{formPantryItem.location.location ? "Location Selected: " + formPantryItem.location.location : "Select Location"} </div>
+                <div>{formPantryItem.location ? "Location Selected: " + formPantryItem.location : "Select Location"} </div>
                 {showLocationDropDown && (
                     <DropDown
                         options={locations.map(location => location.location)}

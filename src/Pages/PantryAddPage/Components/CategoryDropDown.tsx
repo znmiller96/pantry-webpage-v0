@@ -44,7 +44,7 @@ const CategoryDropDown: React.FC<CategoryDropDownProps> = ({
     const categorySelection = (category: string, index: number): void => {
         setFormPantryItem({
             ...formPantryItem,
-            category: categories[index]
+            category: category
         });
     };
 
@@ -55,7 +55,7 @@ const CategoryDropDown: React.FC<CategoryDropDownProps> = ({
                 onClick={(): void => toggleDropDown()}
                 onBlur={(e: React.FocusEvent<HTMLButtonElement>): void => dismissHandler(e)}
             >
-                <div>{formPantryItem.category.category ? "Category Selected: " + formPantryItem.category.category : "Select Category"} </div>
+                <div>{formPantryItem.category ? "Category Selected: " + formPantryItem.category : "Select Category"} </div>
                 {showCategoryDropDown && (
                     <DropDown
                         options={categories.map(category => category.category)}

@@ -9,6 +9,7 @@ function PageTabs() {
 
     useEffect(() => {
         const userString = getLocalStorage("userId");
+        console.log(userString)
         if (userString !== "") {
             const user: user = JSON.parse(JSON.parse(userString))
             setUserLoggedIn(user)

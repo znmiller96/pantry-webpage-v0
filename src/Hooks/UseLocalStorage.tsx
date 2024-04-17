@@ -4,7 +4,7 @@ export function getLocalStorage(id: string) :string {
 
     const localStorageItem = localStorage.getItem(id);
 
-    if (localStorageItem != null) {
+    if (localStorageItem !== null && localStorageItem !== undefined) {
         return localStorageItem;
     }
 

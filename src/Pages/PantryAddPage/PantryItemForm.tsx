@@ -31,8 +31,8 @@ const PantryItemForm: React.FC<PantryItemFormProps> = ({
             name : "Item Name",
             quantityLevel : "HIGH",
             favorite : false,
-            category: {"categoryId": 0, "category": ""},
-            location: {"locationId": 0, "location": ""},
+            category: "",
+            location: "",
             expirationDate: today,
             measurement: {"value": "1", unit: "QTY"}
         }
@@ -61,10 +61,10 @@ const PantryItemForm: React.FC<PantryItemFormProps> = ({
         if (formPantryItem.name === "Item Name" || formPantryItem.name === "") {
             newFormErrors[0] = true;
         }
-        if (formPantryItem.category.categoryId === 0) {
+        if (formPantryItem.category === "") {
             newFormErrors[1] = true;
         }
-        if (formPantryItem.location.locationId === 0) {
+        if (formPantryItem.location === "") {
             newFormErrors[2] = true;
         }
         if (Number(formPantryItem.measurement?.value) < 0) {
